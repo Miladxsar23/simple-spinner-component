@@ -13,10 +13,13 @@ npm install
 Now just enter the following command in the terminal:
  ```shell
 npm start
-`
+```
+
 ## Usage
 Just add the element with 'spinner' or 'spinner spinner-rotate' class.
+
 for set animation duration add data-mx-time="[number of your time(s)]".
+
  ```shell
 <div class="spinner spinner-rotate bg-red" data-mx-time="1.2"></div>
 ```
