@@ -16,8 +16,7 @@
   
   /* variables */
   $spinner-animation-time-per-turn : 1s;
-  $spinner-width : 50px;
-  $spinner-height : 50px;
+  $spinner-padding : 1rem;
   $spinner-default-color : #000;
   $colors : ("red" : #c51162, "blue" : #00b8d4, "yellow" : #ffd600, "green" : #00c853, "orange" : #ff6d00);
   
@@ -58,7 +57,7 @@
   }
   
   .spinner {
-    padding: 1rem;
+    padding: $spinner-padding;
     transform: scale(1);
     background: $spinner-default-color;
     opacity: 1;
@@ -70,7 +69,7 @@
   
   
   .spinner-rotate {
-    padding: 1rem;
+    padding: $spinner-padding;
     border-top: 10px solid $spinner-default-color;
     border-left: 10px solid $spinner-default-color;
     border-right: 10px solid $spinner-default-color;
