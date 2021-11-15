@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  
+  /* variables */
+  $spinner-animation-time-per-turn : 1s;
+  $spinner-width : 50px;
+  $spinner-height : 50px;
+  $spinner-default-color : #000;
+  $colors : ("red" : #c51162, "blue" : #00b8d4, "yellow" : #ffd600, "green" : #00c853, "orange" : #ff6d00);
+  
+  /* mixins and operations */
+  @mixin flex($t, $j, $a) {
+    display: flex;
+    flex-flow: $t wrap;
+    justify-content: $j;
+    align-items: $a;
+  }
+  
+  @each $color,
+  $code in $colors {
+    .bg-#{$color} {
+      background: $code !important;
+    }
+  }
+  
+  @each $color,
+  $code in $colors {
+    .border-spinner-#{$color} {
+      border-top-color: $code !important;
+      border-left-color: $code !important;
+      border-right-color: $code !important;
+    }
+  }
+  
+  /* styles */
+  .center {
+    width: 100%;
+    height: 100vh;
+    @include flex(row, center, center);
+  }
+  
+  .parent-spinner {
+    width: 100%;
+    @include flex(row, center, center);
+  }
+  
+  .spinner {
+    padding: 1rem;
+    transform: scale(1);
+    background: $spinner-default-color;
+    opacity: 1;
+    border-radius: 100%;
+    animation: spinner ease-in-out $spinner-animation-time-per-turn infinite;
+    margin: 5px;
+  }
+  
+  
+  
+  .spinner-rotate {
+    padding: 1rem;
+    border-top: 10px solid $spinner-default-color;
+    border-left: 10px solid $spinner-default-color;
+    border-right: 10px solid $spinner-default-color;
+    border-bottom: 10px solid transparent;
+    border-radius: 50%;
+    background : none;
+    animation: spinner-rotate linear $spinner-animation-time-per-turn infinite;
+    margin: 5px;
+  }
+  
+  
+  
+  
+  /* animations */
+  @keyframes spinner {
+    from {
+      transform: scale(0);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes spinner-rotate {
+    from {
+      transform: rotateZ(0);
+    }
+  
+    to {
+      transform: rotateZ(1turn);
+    }
+  }
+  

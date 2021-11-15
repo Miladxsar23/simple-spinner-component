@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+ul,
+ol {
+  list-style: none; }
+
+/* variables */
+/* mixins and operations */
+.bg-red {
+  background: #c51162 !important; }
+
+.bg-blue {
+  background: #00b8d4 !important; }
+
+.bg-yellow {
+  background: #ffd600 !important; }
+
+.bg-green {
+  background: #00c853 !important; }
+
+.bg-orange {
+  background: #ff6d00 !important; }
+
+.border-spinner-red {
+  border-top-color: #c51162 !important;
+  border-left-color: #c51162 !important;
+  border-right-color: #c51162 !important; }
+
+.border-spinner-blue {
+  border-top-color: #00b8d4 !important;
+  border-left-color: #00b8d4 !important;
+  border-right-color: #00b8d4 !important; }
+
+.border-spinner-yellow {
+  border-top-color: #ffd600 !important;
+  border-left-color: #ffd600 !important;
+  border-right-color: #ffd600 !important; }
+
+.border-spinner-green {
+  border-top-color: #00c853 !important;
+  border-left-color: #00c853 !important;
+  border-right-color: #00c853 !important; }
+
+.border-spinner-orange {
+  border-top-color: #ff6d00 !important;
+  border-left-color: #ff6d00 !important;
+  border-right-color: #ff6d00 !important; }
+
+/* styles */
+.center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; }
+
+.parent-spinner {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; }
+
+.spinner {
+  padding: 1rem;
+  transform: scale(1);
+  background: #000;
+  opacity: 1;
+  border-radius: 100%;
+  animation: spinner ease-in-out 1s infinite;
+  margin: 5px; }
+
+.spinner-rotate {
+  padding: 1rem;
+  border-top: 10px solid #000;
+  border-left: 10px solid #000;
+  border-right: 10px solid #000;
+  border-bottom: 10px solid transparent;
+  border-radius: 50%;
+  background: none;
+  animation: spinner-rotate linear 1s infinite;
+  margin: 5px; }
+
+/* animations */
+@keyframes spinner {
+  from {
+    transform: scale(0);
+    opacity: 1; }
+  to {
+    transform: scale(1);
+    opacity: 0; } }
+
+@keyframes spinner-rotate {
+  from {
+    transform: rotateZ(0); }
+  to {
+    transform: rotateZ(1turn); } }
+
+/*# sourceMappingURL=style.css.map */
